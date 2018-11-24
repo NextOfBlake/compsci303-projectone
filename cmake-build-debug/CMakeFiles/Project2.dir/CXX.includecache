@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/robotics/UMKC/dataStructures/Project2/main.cpp
+iostream
+-
+print.h
+/home/robotics/UMKC/dataStructures/Project2/print.h
+
+/home/robotics/UMKC/dataStructures/Project2/print.h
+iostream
+-
+
