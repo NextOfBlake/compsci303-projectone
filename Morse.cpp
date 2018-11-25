@@ -1,8 +1,9 @@
 #include "Morse.h"
 #include <fstream>
 #include <queue>
-#include <chrono>
 #include "print.h"
+#include <iostream>
+#include <iomanip>
 using namespace std;
 
 BinaryTree<char>* Morse::code = new BinaryTree<char>(4);
@@ -38,18 +39,77 @@ queue<char> Morse::directions(string morse)
     return path;
 }
 
-string Morse::decode()
+string Morse::decode(string encoded)
 {
-    return "hello";
+    vector<string> morseLetters;
+    string decoded;
+    istringstream iss(encoded);
+
+    for(string encoded; iss >> encoded; )
+        morseLetters.push_back(encoded);
+
+    for(auto letter : morseLetters)
+    {
+        char realLetter = Morse::code->locate(Morse::code->root, Morse::directions(letter))->data;
+        decoded.push_back(realLetter);
+    }
+
+    return decoded;
 }
 
-string Morse::encode()
+string Morse::encode(string message)
 {
-    return "hello";
+    string encoded;
+    for(auto letter : message)
+    {
+        string morseLetter;
+        string path = Morse::code->directionsTo(Morse::code->root, letter);
+        for(auto token : path)
+        {
+            if(token == 'R')
+                morseLetter.push_back('_');
+            if(token == 'L')
+                morseLetter.push_back('.');
+        }
+        encoded += morseLetter + ' ';
+    }
+    return encoded;
+}
+
+void Morse::send(string message)
+{
+    cout << "Sending: ";
+    cout.flush();
+    for(auto token : message)
+    {
+        cout << token;
+        cout.flush();
+        Morse::wait();
+    }
+    console::print("\nSent!");
 }
 
 int Morse::exit()
 {
-    console::print<' '>("Signing Off...");
+    cout << endl << endl;
+    console::print<' '>("Signing Off");
+    for(int i=0; i < 6; i++)
+    {
+        cout << '.';
+        cout.flush();
+        Morse::wait();
+    }
     return 0;
+}
+
+void Morse::wait()
+{
+    for(int i=0; i < 10000000; i++)
+    {
+        for(int j = i; j < 20000; j++)
+        {
+            int num = 5*7*17*19;
+            num = num/2;
+        }
+    }
 }

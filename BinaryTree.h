@@ -24,11 +24,13 @@ class BinaryTree {
 public:
     BinaryTree(int depth)
     {
-        BinaryTree::root = new BTNode<Type>('0');
+        BinaryTree::root = new BTNode<Type>('1');
+        BinaryTree::empty = new BTNode<Type>('0');
         console::print("Made Binary Tree");
     }
 
     BTNode<Type>* root;
+    BTNode<Type>* empty;
 
     inline void balancedTree(BTNode<Type>* node, int depth)
     {
@@ -43,8 +45,6 @@ public:
     }
     inline void insert(BTNode<Type>* node, std::queue<char> path, Type data)
     {
-        console::print<' '>("{", data, "}");
-
         while(!path.empty())
         {
             if(path.front() == 'R')
@@ -52,12 +52,63 @@ public:
             if(path.front() == 'L')
                 node = node->left;
 
-            console::print<' '>(path.front());
             path.pop();
         }
-
-        console::print(' ');
         node->data = data;
+    }
+
+    inline BTNode<Type>* locate(BTNode<Type>* node, std::queue<char> path)
+    {
+        while(!path.empty())
+        {
+            if(path.front() == 'R')
+                node = node->right;
+            if(path.front() == 'L')
+                node = node->left;
+
+            path.pop();
+        }
+        return node;
+    }
+
+    inline std::string directionsTo(BTNode<Type>* node, Type target)
+    {
+        std::string path;
+        std::vector<BTNode<Type>*> arr;
+
+        if (this->hasPath(node, arr, target))
+        {
+            BTNode<Type>* root = arr[0];
+            for(int i=1; i<arr.size(); i++)
+            {
+                if(root->right->data == arr[i]->data)
+                    path.push_back('R');
+                if(root->left->data == arr[i]->data)
+                    path.push_back('L');
+
+                root = arr[i];
+            }
+        }
+
+        return path;
+    }
+
+    inline bool hasPath(BTNode<Type>* node, std::vector<BTNode<Type>*>& arr, Type target)
+    {
+        if(!node)
+            return false;
+
+        arr.push_back(node);
+
+        if (node->data == target)
+            return true;
+
+        if (this->hasPath(node->left, arr, target) ||
+            this->hasPath(node->right, arr, target))
+            return true;
+
+        arr.pop_back();
+        return false;
     }
 };
 
