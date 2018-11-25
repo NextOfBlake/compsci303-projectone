@@ -2,6 +2,7 @@
 #define PROJECT2_MORSE_H
 
 #include <string>
+#include <queue>
 #include "BinaryTree.h"
 
 
@@ -13,6 +14,8 @@ public:
     static std::string encode();
     static std::string decode();
     static int exit();
+
+    static std::queue<char> directions(std::string);
 };
 
 

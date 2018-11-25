@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 #if __cplusplus >= 201703L
 #define __CONSTEXPR constexpr

@@ -10,17 +10,17 @@ int main() {
     //Know the Secret Code
     Morse::useCode("../morse.txt");
 
-//    //Receive Message
-//    string received = ".... . .-.. .-.. ---";
-//    console::print("You've Got a Mail!", received);
-//    console::print("Decode It? (y/n)");
-//    char seeIt = console::input<char>();
-//
-//    if(seeIt == 'n')
-//        return morse::exit();
-//
+    //Receive Message
+    string received = ".... . .-.. .-.. ---";
+    console::print("You've Got Mail!", received);
+    console::print("Decode It? (y/n)");
+    char seeIt = console::input<char>();
+
+    if(seeIt == 'n')
+        return Morse::exit();
+
 //    //Decode Message
-//    string decoded = morse::decode()
+//    string decoded = Morse::decode();
 //    console::print("They Said", decoded);
 //
 //    //Reply
