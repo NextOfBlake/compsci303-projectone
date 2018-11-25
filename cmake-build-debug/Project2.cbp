@@ -84,6 +84,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/robotics/UMKC/dataStructures/Project2/BinaryTree.cpp">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="/home/robotics/UMKC/dataStructures/Project2/BinaryTree.h">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="/home/robotics/UMKC/dataStructures/Project2/Morse.cpp">
+			<Option target="Project2"/>
+		</Unit>
+		<Unit filename="/home/robotics/UMKC/dataStructures/Project2/Morse.h">
+			<Option target="Project2"/>
+		</Unit>
 		<Unit filename="/home/robotics/UMKC/dataStructures/Project2/main.cpp">
 			<Option target="Project2"/>
 		</Unit>

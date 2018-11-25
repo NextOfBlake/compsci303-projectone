@@ -2,6 +2,7 @@
 #define MIDTERM_PRINT_H
 
 #include <iostream>
+#include <string>
 
 #if __cplusplus >= 201703L
 #define __CONSTEXPR constexpr
@@ -29,6 +30,13 @@ namespace console {
         if __CONSTEXPR (sep != 0)
             std::cout << sep;
         print<end, sep>(others...);
+    }
+
+    template<typename T>
+    inline T input() {
+        T input;
+        std::cin >> input;
+        return input;
     }
 }
 

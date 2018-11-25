@@ -123,6 +123,60 @@ Project2/fast:
 	$(MAKE) -f CMakeFiles/Project2.dir/build.make CMakeFiles/Project2.dir/build
 .PHONY : Project2/fast
 
+BinaryTree.o: BinaryTree.cpp.o
+
+.PHONY : BinaryTree.o
+
+# target to build an object file
+BinaryTree.cpp.o:
+	$(MAKE) -f CMakeFiles/Project2.dir/build.make CMakeFiles/Project2.dir/BinaryTree.cpp.o
+.PHONY : BinaryTree.cpp.o
+
+BinaryTree.i: BinaryTree.cpp.i
+
+.PHONY : BinaryTree.i
+
+# target to preprocess a source file
+BinaryTree.cpp.i:
+	$(MAKE) -f CMakeFiles/Project2.dir/build.make CMakeFiles/Project2.dir/BinaryTree.cpp.i
+.PHONY : BinaryTree.cpp.i
+
+BinaryTree.s: BinaryTree.cpp.s
+
+.PHONY : BinaryTree.s
+
+# target to generate assembly for a file
+BinaryTree.cpp.s:
+	$(MAKE) -f CMakeFiles/Project2.dir/build.make CMakeFiles/Project2.dir/BinaryTree.cpp.s
+.PHONY : BinaryTree.cpp.s
+
+Morse.o: Morse.cpp.o
+
+.PHONY : Morse.o
+
+# target to build an object file
+Morse.cpp.o:
+	$(MAKE) -f CMakeFiles/Project2.dir/build.make CMakeFiles/Project2.dir/Morse.cpp.o
+.PHONY : Morse.cpp.o
+
+Morse.i: Morse.cpp.i
+
+.PHONY : Morse.i
+
+# target to preprocess a source file
+Morse.cpp.i:
+	$(MAKE) -f CMakeFiles/Project2.dir/build.make CMakeFiles/Project2.dir/Morse.cpp.i
+.PHONY : Morse.cpp.i
+
+Morse.s: Morse.cpp.s
+
+.PHONY : Morse.s
+
+# target to generate assembly for a file
+Morse.cpp.s:
+	$(MAKE) -f CMakeFiles/Project2.dir/build.make CMakeFiles/Project2.dir/Morse.cpp.s
+.PHONY : Morse.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Project2"
+	@echo "... BinaryTree.o"
+	@echo "... BinaryTree.i"
+	@echo "... BinaryTree.s"
+	@echo "... Morse.o"
+	@echo "... Morse.i"
+	@echo "... Morse.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
