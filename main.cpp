@@ -11,9 +11,11 @@ int main() {
     /**Defaults*/
     string morseCode = "../morse.txt";
     vector<string> received {
-        "__. ___ ___ _..",
-        "__. ._. ._ _.. .",
-        ".__. ._.. . ._ ... ."
+        "__ ._ _.__",
+        "..",
+        ".... ._ ..._ .",
+        "._ _.",
+        "._"
     };
 
     /**Know the Secret Code*/
@@ -25,7 +27,7 @@ int main() {
 
     Morse::ask("\nDecode It?");
 
-    console::print("They said:", Morse::decodeWords(received));
+    console::print(Morse::decodeWords(received));
 
     /**Reply*/
     Morse::ask("Reply Back?");
