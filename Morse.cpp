@@ -1,9 +1,10 @@
 #include "Morse.h"
 #include <fstream>
 #include <queue>
-#include "print.h"
+#include <vector>
 #include <iostream>
 #include <iomanip>
+#include "print.h"
 using namespace std;
 
 BinaryTree<char>* Morse::code = new BinaryTree<char>(4);
@@ -57,6 +58,15 @@ string Morse::decode(string encoded)
     return decoded;
 }
 
+string Morse::decodeWords(vector<string> words)
+{
+    string decoded;
+    for(auto word : words)
+        decoded += Morse::decode(word) + " ";
+
+    return decoded;
+}
+
 string Morse::encode(string message)
 {
     string encoded;
@@ -76,9 +86,30 @@ string Morse::encode(string message)
     return encoded;
 }
 
+string Morse::encodeWords(vector<string> words)
+{
+    string encoded;
+    for(auto word : words)
+        encoded += Morse::encode(word) + " ";
+
+    return encoded;
+}
+
+char Morse::ask(string question)
+{
+    console::print<' '>(question, "(y/n): ");
+    char input = console::input<char>();
+
+    if(input == 'y') return input;
+    if(input == 'n') Morse::exit();
+
+    console::print("Invalid Input: Try again");
+    Morse::ask(question);
+}
+
 void Morse::send(string message)
 {
-    cout << "Sending: ";
+    cout << "\nSending: ";
     cout.flush();
     for(auto token : message)
     {
@@ -89,17 +120,17 @@ void Morse::send(string message)
     console::print("\nSent!");
 }
 
-int Morse::exit()
+void Morse::exit()
 {
     cout << endl << endl;
     console::print<' '>("Signing Off");
-    for(int i=0; i < 6; i++)
+    for(int i=0; i < 5; i++)
     {
         cout << '.';
         cout.flush();
         Morse::wait();
     }
-    return 0;
+    std::exit(0);
 }
 
 void Morse::wait()

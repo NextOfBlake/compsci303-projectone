@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/robotics/UMKC/dataStructures/Project2/BinaryTree.cpp
+BinaryTree.h
+/home/robotics/UMKC/dataStructures/Project2/BinaryTree.h
+
 /home/robotics/UMKC/dataStructures/Project2/BinaryTree.h
 print.h
 /home/robotics/UMKC/dataStructures/Project2/print.h
@@ -19,12 +23,14 @@ fstream
 -
 queue
 -
-print.h
-/home/robotics/UMKC/dataStructures/Project2/print.h
+vector
+-
 iostream
 -
 iomanip
 -
+print.h
+/home/robotics/UMKC/dataStructures/Project2/print.h
 
 /home/robotics/UMKC/dataStructures/Project2/Morse.h
 string
@@ -34,10 +40,26 @@ queue
 BinaryTree.h
 /home/robotics/UMKC/dataStructures/Project2/BinaryTree.h
 
+/home/robotics/UMKC/dataStructures/Project2/main.cpp
+iostream
+-
+string
+-
+fstream
+-
+vector
+-
+print.h
+/home/robotics/UMKC/dataStructures/Project2/print.h
+Morse.h
+/home/robotics/UMKC/dataStructures/Project2/Morse.h
+
 /home/robotics/UMKC/dataStructures/Project2/print.h
 iostream
 -
 string
+-
+vector
 -
 stdlib.h
 -

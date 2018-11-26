@@ -1,42 +1,42 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 
 #include "print.h"
 #include "Morse.h"
 using namespace std;
 
 int main() {
-    //Know the Secret Code
-    Morse::useCode("../morse.txt");
+    /**Defaults*/
+    string morseCode = "../morse.txt";
+    vector<string> received {
+        "__. ___ ___ _..",
+        "__. ._. ._ _.. .",
+        ".__. ._.. . ._ ... ."
+    };
 
-    //Receive Message
-    string received = ".... . ._.. ._.. ___";
-    console::print("You've Got Mail!", received);
-    console::print("Decode It? (y/n)");
-    char seeIt = console::input<char>();
+    /**Know the Secret Code*/
+    Morse::useCode(morseCode);
 
-    if(seeIt == 'n')
-        return Morse::exit();
+    /**Receive & Decode Message*/
+    console::print("\nYou've Got Mail!");
+    console::printWords(received);
 
-    //Decode Message
-    string decoded = Morse::decode(received);
-    console::print("They Said", decoded);
+    Morse::ask("\nDecode It?");
 
-    //Reply
-    console::print("Reply Back? (y/n)");
-    char reply = console::input<char>();
+    console::print("They said:", Morse::decodeWords(received));
 
-    if(reply == 'n')
-        return Morse::exit();
+    /**Reply*/
+    Morse::ask("Reply Back?");
 
-    console::print("Message: ");
-    string response = console::input<string>();
+    console::print<' '>("Message:");
+    vector<string> message = console::inputWords();
 
-    //Encode Response
-    string message = Morse::encode(response);
+    /**Encode Response*/
+    string response = Morse::encodeWords(message);
 
-    //Send Message & Exit
-    Morse::send(message);
-    return Morse::exit();
+    /**Send Message & Exit*/
+    Morse::send(response);
+    Morse::exit();
 }

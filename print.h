@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <stdlib.h>
 
 #if __cplusplus >= 201703L
@@ -34,10 +35,42 @@ namespace console {
     }
 
     template<typename T>
-    inline T input() {
+    inline T input()
+    {
         T input;
         std::cin >> input;
         return input;
+    }
+
+    inline std::vector<std::string> inputWords()
+    {
+        std::vector<std::string> words;
+        std::string word;
+        char input[100];
+
+        while(getchar() != '\n');
+
+        scanf("%[^\n]%*c", input);
+        std::string strInput(input);
+
+        for(auto letter : strInput)
+        {
+            word.push_back(letter);
+            if(letter == ' ' || letter == strInput[strInput.size() - 1])
+            {
+                words.emplace_back(word);
+                word = "";
+            }
+        }
+
+        return words;
+    }
+
+    inline void printWords(std::vector<std::string> words)
+    {
+        for(auto word : words)
+            std::cout << word;
+        std::cout << std::endl;
     }
 }
 
