@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Project2.dir/main.cpp.o"
   "CMakeFiles/Project2.dir/Morse.cpp.o"
-  "CMakeFiles/Project2.dir/BinaryTree.cpp.o"
   "Project2.pdb"
   "Project2"
 )

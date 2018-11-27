@@ -10,17 +10,35 @@ class Morse {
 public:
     static BinaryTree<char>* code;
 
+    //GIVEN A FILENAME BUILD THE MORSE CODE TREE
     static void useCode(std::string);
-    static std::string encode(std::string);
-    static std::string encodeWords(std::vector<std::string> words);
-    static std::string decode(std::string);
-    static std::string decodeWords(std::vector<std::string>);
-    static void send(std::string);
-    static char ask(std::string);
-    static void exit();
-    static void wait();
 
+    //TRANSFORM UNDERSCORES => R AND PERIODS => L
     static std::queue<char> directions(std::string);
+
+    //DECODE MORSE WORD TO ENGLISH WORD
+    static std::string decode(std::string);
+
+    //DECODE MANY MORSE WORDS
+    static std::string decodeWords(std::vector<std::string>);
+
+    //ENCODE ENGLISH WORD TO MORSE WORD
+    static std::string encode(std::string);
+
+    //ENCODE MANY ENGLISH WORDS
+    static std::string encodeWords(std::vector<std::string> words);
+
+    //ASK A USER A QUESTION, NO WILL STOP THE PROGRAM
+    static char ask(std::string);
+
+    //READ OUT MESSAGE TOKENS OVER PERIOD OF TIME
+    static void send(std::string);
+
+    //QUITS THE PROGRAM
+    static void exit();
+
+    //A TIME DELAY
+    static void wait();
 };
 
 

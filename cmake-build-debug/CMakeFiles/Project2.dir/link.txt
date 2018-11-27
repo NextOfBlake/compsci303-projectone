@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Project2.dir/main.cpp.o CMakeFiles/Project2.dir/Morse.cpp.o CMakeFiles/Project2.dir/BinaryTree.cpp.o  -o Project2 
+/usr/bin/c++  -g   CMakeFiles/Project2.dir/main.cpp.o CMakeFiles/Project2.dir/Morse.cpp.o  -o Project2 
